@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import googleApi from './apis/googleApi';
+import SearchPage from './components/SearchPage/SearchPage';
 
 class App extends React.Component {
 
@@ -12,7 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        
+        <SearchPage/>
       </div>
     );
   }
