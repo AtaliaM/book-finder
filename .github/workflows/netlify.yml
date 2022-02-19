@@ -35,7 +35,7 @@ jobs:
     needs: build
     environment:
       name: 'Development'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      url: https://bookfinderz.netlify.app/
 
     steps:
     - name: Download artifact from build job
