@@ -1,12 +1,11 @@
 import React from "react";
-// import googleApi from "../../apis/googleApi";
+import "./SearchField.css";
 
 class SearchField extends React.Component {
 
     state = { searchTerm: "", searchResults: null, noSearchResults: false }
 
     onChange = (e) => {
-        console.log(e.target.value)
         this.setState({ searchTerm: e.target.value });
     }
 
