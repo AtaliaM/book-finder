@@ -1,5 +1,5 @@
 import React from "react";
-import googleApi from "../../apis/googleApi";
+// import googleApi from "../../apis/googleApi";
 
 class SearchField extends React.Component {
 
@@ -10,22 +10,18 @@ class SearchField extends React.Component {
         this.setState({ searchTerm: e.target.value });
     }
 
-    onSearch = async (e) => {
-        e.preventDefault();
-        const res = await googleApi.get(this.state.searchTerm);
-        if(res.data.totalItems > 0) {
-            this.setState({noSearchResults:false, searchResults: res.data.items});
-        } else {
-            this.setState({noSearchResults:true});
-        }
+    onKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            this.props.onSearch(e, this.state.searchTerm);
+          }
     }
 
     render() {
         return (
             <>
-            <div class="ui action input">
-                <input type="text" placeholder="Search..." onChange={(e)=>this.onChange(e)}/>
-                <button class="ui button" onClick={(e)=>this.onSearch(e)}>Search</button>
+            <div className="ui action input">
+                <input type="text" placeholder="Search..." onChange={(e)=>this.onChange(e)} onKeyPress={(e)=>this.onKeyPress(e)}/>
+                <button className="ui button" onClick={(e)=>this.props.onSearch(e, this.state.searchTerm)}>Search</button>
             </div>
             {this.state.noSearchResults ? <div>no results for this term</div> : null}
             </>
