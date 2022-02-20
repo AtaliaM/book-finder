@@ -26,6 +26,7 @@ class SearchPage extends React.Component {
                         <SearchResults results={this.state.results} />
                     </div>
                     : null}
+                {this.state.noSearchResults ? <div>no results for this term</div> : null}
             </>
         )
     }

@@ -3,7 +3,7 @@ import "./SearchField.css";
 
 class SearchField extends React.Component {
 
-    state = { searchTerm: "", searchResults: null, noSearchResults: false }
+    state = { searchTerm: "", searchResults: null }
 
     onChange = (e) => {
         this.setState({ searchTerm: e.target.value });
@@ -22,7 +22,6 @@ class SearchField extends React.Component {
                 <input type="text" placeholder="Search..." onChange={(e)=>this.onChange(e)} onKeyPress={(e)=>this.onKeyPress(e)}/>
                 <button className="ui button" onClick={(e)=>this.props.onSearch(e, this.state.searchTerm)}>Search</button>
             </div>
-            {this.state.noSearchResults ? <div>no results for this term</div> : null}
             </>
         )
     }
