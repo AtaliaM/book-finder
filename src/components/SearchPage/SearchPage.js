@@ -2,6 +2,7 @@ import React from 'react';
 import SearchField from '../SearchField.js/SearchField';
 import SearchResults from '../SearchResults/SearchResults';
 import googleApi from "../../apis/googleApi";
+import './SearchPage.css';
 
 class SearchPage extends React.Component {
 
@@ -34,7 +35,7 @@ class SearchPage extends React.Component {
                 {this.state.noSearchResults ? <div>No results for this term</div> : null}
                 {this.state.noSearchTermMsg ? <div>Please enter something to search</div> : null}
                 {this.state.results.length > 0 ?
-                    <div className="ui segment">
+                    <div className="ui five cards stackable resultsContainer">
                         <SearchResults results={this.state.results} />
                     </div>
                     : null}
