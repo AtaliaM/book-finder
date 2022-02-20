@@ -1,24 +1,21 @@
 import React from 'react';
-import noimage from '../../noimage.jpg';
+import noCoverAvailable from '../../noimage.jpg';
 import ShowMoreText from "react-show-more-text";
 
 class ResultCard extends React.Component {
 
-    // executeOnClick(isExpanded) {
-    //     console.log(isExpanded);
-    // }
+    returnBookCover = () => {
+        return this.props.cover ? `https${this.props.cover.slice(4)}` : noCoverAvailable;
+    }
 
     render() {
         return (
             <div className="ui card centered">
                 <div className="image">
-                    <img alt={this.props.title} src={this.props.cover || noimage} />
+                    <img alt={this.props.title} src={this.returnBookCover()} />
                 </div>
                 <div className="content">
                     <h3 className="header">{this.props.title}</h3>
-                    {/* <div className="description">
-                        {this.props.description}
-                    </div> */}
                     <ShowMoreText
                         lines={10}
                         more="Show more"

@@ -8,7 +8,7 @@ class SearchResults extends React.Component {
         return ( 
             this.props.results.map((result)=> {
                 return (
-                    <ResultCard title={result.volumeInfo.title} cover={(result.volumeInfo.imageLinks && result.volumeInfo.imageLinks.thumbnail) || ""} description={result.volumeInfo.description}/>
+                    <ResultCard key={result.id} title={result.volumeInfo.title} cover={(result.volumeInfo.imageLinks && result.volumeInfo.imageLinks.thumbnail) || ""} description={result.volumeInfo.description}/>
                 )
         })
         )
