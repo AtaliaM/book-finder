@@ -14,3 +14,9 @@
 .logo {
   background: #001920;
 }
+
+@media screen and (max-width: 768px) {
+  .logo-img {
+    width: 30%;
+  }
+}
