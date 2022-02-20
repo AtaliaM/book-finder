@@ -4,7 +4,6 @@ import ResultCard from '../ResultCard/ResultCard';
 class SearchResults extends React.Component {
     
     renderResultList = () => {
-        console.log(this.props)
 
         return ( 
             this.props.results.map((result)=> {
